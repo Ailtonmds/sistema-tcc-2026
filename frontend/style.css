@@ -1,224 +1,525 @@
+/* =========================================
+   CONFIGURAÇÕES
+========================================= */
+
+:root {
+    --verde: #246b3a;
+    --verde-escuro: #123d24;
+    --verde-hover: #1b542d;
+    --verde-claro: #82d39c;
+
+    --fundo: #f5f7f5;
+    --borda: #dfe4df;
+    --texto: #303730;
+    --texto-secundario: #69736b;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+
+/* =========================================
+   BODY
+========================================= */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--fundo);
+
+    color: var(--texto);
 }
 
+
+/* =========================================
+   LOGIN
+========================================= */
 
 .login-container {
-    width: 100%;
-    max-width: 440px;
+    min-height: 100vh;
+
     padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c2817,
+            #164a2b
+        );
 }
 
-.login-card {
-    background: rgba(255, 255, 255, 0.97);
 
-    color: #222;
+/* =========================================
+   LADO ESQUERDO
+   Mantido caso você volte para o
+   layout dividido do login
+========================================= */
 
-    border-radius: 18px;
+.login-info {
+    position: relative;
 
-    padding: 40px;
+    overflow: hidden;
 
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.35);
+    background:
+        linear-gradient(
+            145deg,
+            #0c2817,
+            #164a2b,
+            #0c2516
+        );
 }
 
-/* LOGO */
 
-.logo-area {
-    text-align: center;
-    margin-bottom: 35px;
+/* =========================================
+   CÍRCULOS DECORATIVOS
+========================================= */
+
+.login-info::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    top: -220px;
+    right: -220px;
 }
 
-.logo {
-    width: 70px;
-    height: 70px;
 
-    margin: 0 auto 15px;
+.login-info::after {
+    content: "";
 
-    border-radius: 18px;
+    position: absolute;
 
-    background: #246b3a;
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    bottom: -180px;
+    left: -120px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 8px 20px rgba(36, 107, 58, 0.3);
-}
+    border-radius: 12px;
 
-.logo span {
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
     color: white;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.logo-area h1 {
-    font-size: 28px;
-    margin-bottom: 7px;
-}
-
-.logo-area p {
-    color: #777;
-    font-size: 14px;
-}
-
-/* FORM */
-
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
 
     font-size: 14px;
-    font-weight: bold;
 
-    margin-bottom: 8px;
+    font-weight: 800;
 
-    color: #333;
+    letter-spacing: 1px;
 }
 
-.input-group input {
+
+.brand-name {
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TAG
+========================================= */
+
+.tag {
+    color: var(--verde-claro);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   TEXTO VERDE
+========================================= */
+
+.text-green {
+    color: var(--verde-claro);
+}
+
+
+.text-green-dark {
+    color: var(--verde);
+}
+
+
+/* =========================================
+   ÍCONES DOS RECURSOS
+========================================= */
+
+.feature-icon {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(130, 211, 156, 0.14);
+
+    color: var(--verde-claro);
+}
+
+
+/* =========================================
+   LOGIN SECTION
+========================================= */
+
+.login-section {
+    background: #f8faf8;
+
+    padding: 40px;
+}
+
+
+.login-card {
     width: 100%;
 
-    padding: 14px 15px;
-
-    border: 1px solid #d8d8d8;
-
-    border-radius: 9px;
-
-    font-size: 15px;
-
-    outline: none;
-
-    transition: 0.2s;
+    max-width: 430px;
 }
 
-.input-group input:focus {
-    border-color: #246b3a;
+
+/* =========================================
+   CABEÇALHO DO LOGIN
+========================================= */
+
+.welcome {
+    color: var(--verde);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.input-group-text {
+    background: white;
+
+    border-color: var(--borda);
+
+    color: #8b938c;
+}
+
+
+.form-control {
+    height: 52px;
+
+    border-color: var(--borda);
+}
+
+
+.form-control:focus {
+    border-color: var(--verde);
 
     box-shadow:
-        0 0 0 3px rgba(36, 107, 58, 0.12);
+        0 0 0 0.2rem rgba(36, 107, 58, 0.10);
 }
 
-/* SENHA */
 
-.password-container {
-    position: relative;
-}
-
-.password-container input {
-    padding-right: 50px;
-}
-
-#mostrarSenha {
-    position: absolute;
-
-    right: 10px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    border: none;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    font-size: 18px;
-
-    opacity: 0.6;
-}
-
-#mostrarSenha:hover {
-    opacity: 1;
-}
-
-/* BOTÃO */
+/* =========================================
+   BOTÃO LOGIN
+========================================= */
 
 .btn-login {
-    width: 100%;
+    height: 52px;
 
-    padding: 14px;
+    background: var(--verde);
 
-    border: none;
-
-    border-radius: 9px;
-
-    background: #246b3a;
+    border-color: var(--verde);
 
     color: white;
 
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
+    font-weight: 700;
 
     transition: 0.2s;
 }
 
-.btn-login:hover {
-    background: #1b542d;
 
-    transform: translateY(-1px);
+.btn-login:hover {
+    background: var(--verde-hover);
+
+    border-color: var(--verde-hover);
+
+    color: white;
 }
+
 
 .btn-login:active {
-    transform: translateY(0);
+    transform: scale(0.99);
 }
 
-/* ERRO */
 
-.mensagem-erro {
-    display: none;
+/* =========================================
+   BOTÃO MOSTRAR SENHA
+========================================= */
 
-    margin-bottom: 15px;
+#mostrarSenha {
+    border-color: var(--borda);
 
-    padding: 11px;
+    color: #6c756e;
+}
 
-    border-radius: 8px;
 
-    background: #ffe5e5;
+#mostrarSenha:hover {
+    background: #f1f4f1;
 
-    color: #b42318;
+    color: var(--verde);
+}
+
+
+/* =========================================
+   CADASTRO DE PRODUTOS
+========================================= */
+
+.agro-navbar {
+    background: var(--verde-escuro);
+}
+
+
+/* =========================================
+   LOGO DA NAVBAR
+========================================= */
+
+.navbar-logo {
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.7);
 
     font-size: 14px;
 
-    text-align: center;
+    padding-left: 14px !important;
+
+    padding-right: 14px !important;
 }
 
-.mensagem-erro.ativo {
-    display: block;
+
+.navbar .nav-link:hover {
+    color: white;
 }
 
-/* FOOTER */
 
-footer {
-    text-align: center;
+.navbar .nav-link.active {
+    color: white;
+}
 
-    margin-top: 25px;
 
-    color: #999;
+/* =========================================
+   CARD DE CADASTRO
+========================================= */
 
+.cadastro-card {
+    border-radius: 14px;
+}
+
+
+/* =========================================
+   ÍCONE DA SEÇÃO DO FORMULÁRIO
+========================================= */
+
+.form-section-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(36, 107, 58, 0.1);
+
+    color: var(--verde);
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   INPUTS DO CADASTRO
+========================================= */
+
+.cadastro-card .form-control,
+.cadastro-card .form-select {
+    min-height: 48px;
+
+    border-color: var(--borda);
+}
+
+
+.cadastro-card .input-group-text {
+    min-width: 45px;
+
+    justify-content: center;
+
+    background: #f8faf8;
+
+    border-color: var(--borda);
+
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================
+   FOCO DOS INPUTS DO CADASTRO
+========================================= */
+
+.cadastro-card .form-control:focus,
+.cadastro-card .form-select:focus {
+    border-color: var(--verde);
+
+    box-shadow:
+        0 0 0 0.2rem rgba(36, 107, 58, 0.10);
+}
+
+
+/* =========================================
+   LABEL DO CADASTRO
+========================================= */
+
+.cadastro-card .form-label {
+    color: var(--texto);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   TEXTO AUXILIAR
+========================================= */
+
+.cadastro-card .form-text {
     font-size: 12px;
+
+    color: #89918a;
 }
 
-/* RESPONSIVO */
+
+/* =========================================
+   BOTÃO DE CADASTRO
+========================================= */
+
+.cadastro-card .btn-success {
+    background: var(--verde);
+
+    border-color: var(--verde);
+}
+
+
+.cadastro-card .btn-success:hover {
+    background: var(--verde-hover);
+
+    border-color: var(--verde-hover);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE DO LOGIN
+========================================= */
+
+@media (max-width: 991.98px) {
+
+    .login-section {
+        min-height: 100vh;
+
+        padding: 25px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE DO LOGIN
+========================================= */
 
 @media (max-width: 480px) {
 
@@ -226,65 +527,27 @@ footer {
         padding: 15px;
     }
 
+
+    .login-section {
+        padding: 20px;
+    }
+
+
     .login-card {
-        padding: 30px 25px;
+        max-width: 100%;
     }
 
-    .logo-area h1 {
-        font-size: 24px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE DO CADASTRO
+========================================= */
+
+@media (max-width: 575.98px) {
+
+    .cadastro-card .card-body {
+        padding: 25px !important;
     }
-}
 
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-}
-
-h2 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    margin-top: 0;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 0.95rem;
-}
-
-.btn-submit {
-    background-color: #27ae60;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    transition: background-color 0.2s ease;
-}
-
-.btn-submit:hover {
-    background-color: #219150;
 }

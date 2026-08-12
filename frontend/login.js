@@ -1,15 +1,5 @@
-const form = document.getElementById("loginForm");
-
-const usuario = document.getElementById("usuario");
-
-const senha = document.getElementById("senha");
-
-const mensagemErro = document.getElementById("mensagemErro");
-
 const mostrarSenha = document.getElementById("mostrarSenha");
-
-
-/* MOSTRAR / ESCONDER SENHA */
+const eyeIcon = document.getElementById("eyeIcon");
 
 mostrarSenha.addEventListener("click", () => {
 
@@ -17,67 +7,27 @@ mostrarSenha.addEventListener("click", () => {
 
         senha.type = "text";
 
-        mostrarSenha.textContent = "🙈";
+        eyeIcon.classList.remove("bi-eye");
+
+        eyeIcon.classList.add("bi-eye-slash");
+
+        mostrarSenha.setAttribute(
+            "aria-label",
+            "Ocultar senha"
+        );
 
     } else {
 
         senha.type = "password";
 
-        mostrarSenha.textContent = "👁";
+        eyeIcon.classList.remove("bi-eye-slash");
 
-    }
+        eyeIcon.classList.add("bi-eye");
 
-});
-
-
-/* LOGIN */
-
-form.addEventListener("submit", (event) => {
-
-    event.preventDefault();
-
-    mensagemErro.classList.remove("ativo");
-
-    const usuarioDigitado = usuario.value.trim();
-
-    const senhaDigitada = senha.value.trim();
-
-
-    if (usuarioDigitado === "" || senhaDigitada === "") {
-
-        mensagemErro.textContent =
-            "Preencha todos os campos.";
-
-        mensagemErro.classList.add("ativo");
-
-        return;
-    }
-
-
-    /*
-        TEMPORÁRIO
-
-        Depois vamos substituir por:
-
-        fetch("../backend/login.php", {
-            method: "POST",
-            ...
-        })
-    */
-
-    if (
-        usuarioDigitado === "admin" &&
-        senhaDigitada === "123456"
-    ) {
-
-        window.location.href = "dashboard.html";
-
-    } else {
-
-        mensagemErro.textContent =
-            "Usuário ou senha incorretos.";
-
-        mensagemErro.classList.add("ativo");
+        mostrarSenha.setAttribute(
+            "aria-label",
+            "Mostrar senha"
+        );
 
     }
 
