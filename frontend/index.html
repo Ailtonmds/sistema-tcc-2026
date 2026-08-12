@@ -1,64 +1,88 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Sistema Agropecuário</title>
+
     <link rel="stylesheet" href="style.css">
-    <title>SGA - Cadastro de Produto</title>
 </head>
+
 <body>
 
-<div class="card">
-    <h2>Cadastro de Material</h2>
-    
-    <form action="processar_cadastro.php" method="POST">
-        
-        <!-- Campo para Nome (Descrição Detalhada) -->
-        <div class="form-group">
-            <label for="nome">Descrição do Produto</label>
-            <input type="text" id="nome" name="nome" placeholder="Ex: Papel A4 75g" required>
-        </div>
+    <main class="login-container">
 
-        <!-- Seleção de Categoria -->
-        <div class="form-group">
-            <label for="categoria">Categoria</label>
-            <select id="categoria" name="categoria" required>
-                <option value="">Selecione uma categoria</option>
-                <option value="vacinas">Vacinas</option>
-                <option value="epis">EPIs</option>
-            </select>
-        </div>
+        <section class="login-card">
 
-        <!-- Atributos de Lote e Validade -->
-        <div class="form-group">
-            <label for="lote">Número do Lote</label>
-            <select id="lote" name="lote" required>
-                <option value="">Selecione um lote</option>
-                <option value="LO3T">LO3T</option>
-                <option value="JT0G">JT0G</option>
-                <option value="E46Y">E46Y</option>
-            </select>
-        </div>
+            <div class="logo-area">
+                <div class="logo">
+                    <span>AG</span>
+                </div>
 
-        <div class="form-group">
-            <label for="validade">Data de Expiração</label>
-            <input type="date" id="validade" name="validade">
-        </div>
+                <h1>AgroStock</h1>
+                <p>Sistema de Controle de Estoque</p>
+            </div>
 
-        <!-- Unidade de Medida -->
-        <div class="form-group">
-            <label for="unidade">Unidade de Medida</label>
-            <select id="unidade" name="unidade">
-                <option value="un">Unidade (un)</option>
-                <option value="cx">Caixa (cx)</option>
-                <option value="kg">Quilograma (kg)</option>
-                <option value="m">Metro (m)</option>
-            </select>
-        </div>
+            <form id="loginForm">
 
-        <button type="submit" class="btn-submit">Registrar Produto</button>
-    </form>
-</div>
+                <div class="input-group">
+                    <label for="usuario">Usuário</label>
+
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Digite seu usuário"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="mostrarSenha"
+                            aria-label="Mostrar senha"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+                </div>
+
+                <div id="mensagemErro" class="mensagem-erro"></div>
+
+                <button type="submit" class="btn-login">
+                    Entrar
+                </button>
+
+            </form>
+
+            <footer>
+                <p>Sistema interno • Controle de Estoque</p>
+            </footer>
+
+        </section>
+
+    </main>
+
+    <script src="js/login.js"></script>
 
 </body>
+
 </html>

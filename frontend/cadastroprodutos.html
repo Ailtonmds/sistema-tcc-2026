@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SGA - Cadastro de Produto</title>
+</head>
+<body>
+
+<div class="card">
+    <h2>Cadastro de Material</h2>
+    
+    <form action="processar_cadastro.php" method="POST">
+        
+        <!-- Campo para Nome (Descrição Detalhada) -->
+        <div class="form-group">
+            <label for="nome">Descrição do Produto</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: Papel A4 75g" required>
+        </div>
+
+        <!-- Seleção de Categoria -->
+        <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria" required>
+                <option value="">Selecione uma categoria</option>
+                <option value="vacinas">Vacinas</option>
+                <option value="epis">EPIs</option>
+            </select>
+        </div>
+
+        <!-- Atributos de Lote e Validade -->
+        <div class="form-group">
+            <label for="lote">Número do Lote</label>
+            <select id="lote" name="lote" required>
+                <option value="">Selecione um lote</option>
+                <option value="LO3T">LO3T</option>
+                <option value="JT0G">JT0G</option>
+                <option value="E46Y">E46Y</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="validade">Data de Expiração</label>
+            <input type="date" id="validade" name="validade">
+        </div>
+
+        <!-- Unidade de Medida -->
+        <div class="form-group">
+            <label for="unidade">Unidade de Medida</label>
+            <select id="unidade" name="unidade">
+                <option value="un">Unidade (un)</option>
+                <option value="cx">Caixa (cx)</option>
+                <option value="kg">Quilograma (kg)</option>
+                <option value="m">Metro (m)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Registrar Produto</button>
+    </form>
+</div>
+
+</body>
+</html>
