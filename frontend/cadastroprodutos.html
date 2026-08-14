@@ -139,13 +139,13 @@
                     action="../backend/produto.php"
                     method="POST"
                 >
-                    <!-- DESCRIÇÃO -->
+                    <!-- NOME -->
                     <div class="mb-4">
                         <label
-                            for="descricao"
+                            for="nome"
                             class="form-label fw-semibold"
                         >
-                            Descrição do produto
+                            Nome do produto
                         </label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -154,14 +154,14 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="descricao"
-                                name="descricao"
+                                id="nome"
+                                name="nome"
                                 placeholder="Ex: Vacina contra febre aftosa"
                                 required
                             >
                         </div>
                         <div class="form-text">
-                            Informe o nome ou descrição do produto.
+                            Informe o nome do produto.
                         </div>
                     </div>
                     <!-- CATEGORIA + UNIDADE -->
@@ -181,7 +181,7 @@
                                 <select
                                     class="form-select"
                                     id="categoria"
-                                    name="categoria"
+                                    name="id_categoria"
                                     required
                                 >
                                     <option
