@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Criar usuário</title>
+  <link rel="stylesheet" href="../frontend/style.css">
+</head>
+<body>
+  <main class="card">
+    <div class="text-center mb-4"><div class="logo">AG</div><div class="brand">AgroStock</div><div class="subtitle">Sistema de Controle de Estoque</div></div>
+    <h1>Criar usuário</h1>
+    <p>Informe seus dados para criar a conta.</p>
+
+    <form action="criar_usuario.php" method="POST">
+      <label for="user">Usuário</label>
+      <input type="text" id="user" name="user" minlength="3" maxlength="50" required autocomplete="username">
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" minlength="6" required autocomplete="new-password">
+
+      <button type="submit">Criar usuário</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -225,6 +225,55 @@ body {
     width: 100%;
 
     max-width: 430px;
+
+    padding: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 22px 55px rgba(4, 25, 13, 0.28);
+}
+
+
+.logo {
+    width: 54px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    background: var(--verde);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand {
+    margin: 0;
+    color: var(--verde-escuro);
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.subtitle {
+    margin: 4px 0 0;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.auth-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--verde);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    color: var(--verde-hover);
+    text-decoration: underline;
 }
 
 
@@ -535,6 +584,8 @@ body {
 
     .login-card {
         max-width: 100%;
+
+        padding: 28px 22px;
     }
 
 }
