@@ -1,0 +1,39 @@
+-- CORRECAO: schema minimo para que login e cadastro funcionem em uma instalacao nova.
+CREATE DATABASE IF NOT EXISTS almoxarifado
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+USE almoxarifado;
+
+CREATE TABLE IF NOT EXISTS user_login (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100) NOT NULL UNIQUE,
+    senha_hash VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS produto (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    categoria VARCHAR(50) NOT NULL,
+    unidade VARCHAR(50) NOT NULL,
+    lote VARCHAR(100) NOT NULL,
+    validade DATE NOT NULL,
+    localizacao VARCHAR(150) NOT NULL,
+    quantidade INT NOT NULL DEFAULT 0,
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS analise (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    produto_id INT UNSIGNED NULL,
+    titulo VARCHAR(150) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'Pendente',
+    prioridade VARCHAR(10) NOT NULL DEFAULT 'Média',
+    data_analise DATE NOT NULL,
+    responsavel VARCHAR(100) NOT NULL,
+    observacoes TEXT NULL,
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_analise_produto FOREIGN KEY (produto_id) REFERENCES produto(id) ON DELETE SET NULL
+) ENGINE=InnoDB;

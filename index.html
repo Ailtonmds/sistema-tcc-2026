@@ -43,7 +43,8 @@
                 </p>
             </div>
             <!-- FORMULÁRIO -->
-            <form id="loginForm" action="backend/login.php" method="GET">
+            <!-- CORRECAO: credenciais devem ser enviadas por POST, nunca pela URL. -->
+            <form id="loginForm" action="backend/login.php" method="POST">
                 <!-- USUÁRIO -->
                 <div class="mb-3">
                     <label
@@ -92,6 +93,7 @@
                             type="button"
                             class="btn btn-outline-secondary"
                             id="mostrarSenha"
+                            aria-label="Mostrar senha"
                         >
                             <i
                                 class="bi bi-eye"
@@ -132,5 +134,7 @@
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
+    <!-- CORRECAO: restaura o comportamento do botao de visualizar senha. -->
+    <script src="frontend/login.js"></script>
 </body>
 </html>

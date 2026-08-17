@@ -57,7 +57,7 @@
                     <li class="nav-item">
                         <a
                             class="nav-link"
-                            href="#"
+                            href="Dashboard.html"
                         >
                             <i class="bi bi-grid me-1"></i>
                             Dashboard
@@ -79,6 +79,12 @@
                         >
                             <i class="bi bi-arrow-left-right me-1"></i>
                             Movimentações
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="crud.html">
+                            <i class="bi bi-clipboard-data me-1"></i>
+                            Análises
                         </a>
                     </li>
                 </ul>
@@ -178,10 +184,11 @@
                                 <span class="input-group-text">
                                     <i class="bi bi-tags"></i>
                                 </span>
+                                <!-- CORRECAO: o backend recebe a categoria como texto, conforme as opcoes do formulario. -->
                                 <select
                                     class="form-select"
                                     id="categoria"
-                                    name="id_categoria"
+                                    name="categoria"
                                     required
                                 >
                                     <option

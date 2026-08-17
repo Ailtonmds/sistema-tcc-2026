@@ -551,3 +551,141 @@ body {
     }
 
 }
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-primary-action {
+    background: var(--verde);
+    border-color: var(--verde);
+    font-weight: 600;
+}
+
+
+.dashboard-primary-action:hover {
+    background: var(--verde-hover);
+    border-color: var(--verde-hover);
+}
+
+
+.dashboard-stat-card,
+.dashboard-card {
+    border-radius: 14px;
+}
+
+
+.dashboard-stat-card {
+    border-top: 3px solid rgba(36, 107, 58, 0.18) !important;
+}
+
+
+.dashboard-stat-icon {
+    width: 44px;
+    height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(36, 107, 58, 0.10);
+
+    color: var(--verde);
+    font-size: 20px;
+}
+
+
+.dashboard-stat-icon.warning {
+    background: rgba(178, 116, 11, 0.12);
+    color: #a66a08;
+}
+
+
+.dashboard-stat-icon.danger {
+    background: rgba(180, 55, 55, 0.10);
+    color: #a33a3a;
+}
+
+
+.dashboard-empty-state {
+    border: 1px dashed var(--borda);
+    border-radius: 12px;
+}
+
+
+.dashboard-empty-state > i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 12px;
+
+    border-radius: 50%;
+
+    background: rgba(36, 107, 58, 0.10);
+
+    color: var(--verde);
+    font-size: 22px;
+}
+
+
+.dashboard-quick-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px;
+
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+.dashboard-quick-link > span:first-child {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(36, 107, 58, 0.10);
+
+    color: var(--verde);
+    font-size: 17px;
+}
+
+
+.dashboard-quick-link > .bi-chevron-right {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+
+.dashboard-quick-link:hover {
+    border-color: rgba(36, 107, 58, 0.4);
+    background: #f8faf8;
+    color: var(--verde);
+    transform: translateX(2px);
+}
+
+/* ANÁLISES */
+.analise-busca { max-width: 310px; }
+.analise-textarea { min-height: 48px; border-color: var(--borda); }
+.table > :not(caption) > * > * { padding-top: 1rem; padding-bottom: 1rem; }
+@media (max-width: 767.98px) { .analise-busca { max-width: none; } }
