@@ -235,8 +235,8 @@ body {
 
 
 .logo {
-    width: 54px;
-    height: 54px;
+    width: 6em;
+    height: 6em;
     display: inline-flex;
     align-items: center;
     justify-content: center;
