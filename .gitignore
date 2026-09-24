@@ -1,0 +1,50 @@
+# Dependencies
+vendor/
+node_modules/
+
+# Environment
+.env
+.env.local
+*.env
+
+# Database
+*.sqlite
+*.db
+
+# Logs
+*.log
+error_log
+php_errors.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+*.cache
+.php-cs-fixer.cache
+
+# Uploads (if any)
+uploads/
+storage/
+
+# Backup
+*.bak
+*.backup
+*.sql.gz
+
+# Test coverage
+coverage/
+.phpunit.result.cache
+
+# Temporary files
+tmp/
+temp/
+*.tmp
